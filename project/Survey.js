@@ -60,12 +60,41 @@ function keyPressed(){
   if(keyCode === 69){
     createCanvas(400, 400);
     background(0);
-    if (ingredients<150){
-        text("Too Many Ingredients.",200,200)
-    
-    noFill()
+    fill(255,0,0)
+    text("Press R to Restart",220,380)
+    fill(255)
+    if (ingredients<=150){
+        text("Too Many Ingredients, Make it Reasonable.",20,200)
     }
+    if (300>=ingredients && ingredients>150){
+      text("Thats One Big Burger.",100,200)
+   }
+    if (360>=ingredients && ingredients>300){
+    text("I'd Eat that Burger.",100,200)
+   }
+    if(ingredients>360){
+      text("Not Enough Burger.",100,200)
+   }
+   noFill()
+  }
+  if(keyCode===82){
+    background(255, 201, 246);
+    noStroke();
+    fill(0);
+    text(myMessage, 30, textNumber);
+    fill(255, 182, 110)
+    text("B=Bun",30,textNumber+20);
+    fill(71, 50, 29) 
+    text("P=Patty",30,textNumber+40);
+    fill(255, 115, 0)
+    text("C=Cheese",30,textNumber+60);
+    fill(3, 156, 0)
+    text("L=Lettuce",30,textNumber+80);
+    fill(232, 41, 28)
+    text("T=Tomato",30,textNumber+100);
+    text("Press E to Evaluate.",30,380)
+    noFill()
+    ingredients = 400
   }
   rect(250,ingredients,100,10) 
 }
-
