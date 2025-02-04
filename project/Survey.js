@@ -102,6 +102,10 @@ function keyPressed(){
   text("Too Much Tomato.",130,100+spacing)
   spacing = spacing + 30
   }
+  if (patty===5){
+    text("Guess You're a Vegetarian.",130,100+spacing)
+    spacing = spacing + 30
+    }
    noFill()
   }
 
