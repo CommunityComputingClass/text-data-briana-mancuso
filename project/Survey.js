@@ -77,7 +77,7 @@ function keyPressed(){
     text("Press R to Restart",220,380)
     fill(255)
     if (ingredients<=150){
-        text("Too Many Ingredients, Make it Reasonable.",20,200)
+        text("Too Many Ingredients, Make it Reasonable.",20,100)
     }
     if (300>=ingredients && ingredients>150){
       text("Thats One Big Burger.",100,100)
@@ -95,11 +95,11 @@ function keyPressed(){
   text("So You Just Have No Burger, Fine Then.",20,100)
   } 
   if (bun>5){
-  text("Little Heavy on the Bread.", 80, 100)
+  text("Little Heavy on the Bread.", 80, 100+spacing)
   spacing = spacing + 30
   }
   if (tomato>5){
-  text("Too Much Tomato.",120,100+spacing)
+  text("Too Much Tomato.",130,100+spacing)
   spacing = spacing + 30
   }
    noFill()
@@ -123,6 +123,9 @@ function keyPressed(){
     text("Press E to Evaluate.",30,380)
     noFill()
     ingredients = 400
+    spacing = 30
+    bun = 0
+    tomato = 0
   }
   rect(250,ingredients,100,10) 
 }
