@@ -14,6 +14,8 @@ let spacing = 30
 
 function preload(){
     myFont = loadFont("vhs-gothic.ttf")
+    chef = loadImage("Chef.png")
+    bubble = loadImage("text.png")
 }
 
 function setup() {
@@ -82,7 +84,7 @@ function keyPressed(){
     if (300>=ingredients && ingredients>150){
       text("Thats One Big Burger.",100,100)
    }
-    if (350>=ingredients && ingredients>300 && tomato<=5 && bun<=5){
+    if (350>=ingredients && ingredients>300 && tomato<=5 && bun<=5 && cheese<=5 && lettuce<=5 && patty<=5){
     text("I'd Eat that Burger.",100,100)
    }
     if(ingredients>350 && ingredients<=380){
@@ -102,11 +104,27 @@ function keyPressed(){
   text("Too Much Tomato.",130,100+spacing)
   spacing = spacing + 30
   }
-  if (patty===5){
-    text("Guess You're a Vegetarian.",130,100+spacing)
+  if (lettuce>5){
+    text("Too Much Lettuce, This Isn't a Salad.",30,100+spacing)
     spacing = spacing + 30
     }
+  if (cheese>5){
+  text("Too Much Cheese.",130,100+spacing)
+  spacing = spacing + 30
+  }
+  if (patty>5){
+    text("Too Much Meat.",130,100+spacing)
+    spacing = spacing + 30
+    }
+  if (patty===0 && ingredients<400){
+    text("No Meat? That's a Sandwitch Not a Burger.",25,100+spacing)
+    spacing = spacing + 30
+    }
+   image(bubble,-20,200)
+   image(chef,0,310)
    noFill()
+   spacing = 30
+   
   }
 
   if(keyCode===82){
@@ -127,9 +145,11 @@ function keyPressed(){
     text("Press E to Evaluate.",30,380)
     noFill()
     ingredients = 400
-    spacing = 30
     bun = 0
     tomato = 0
+    cheese = 0
+    lettuce = 0
+    patty = 0
   }
   rect(250,ingredients,100,10) 
 }
